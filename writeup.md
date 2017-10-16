@@ -20,7 +20,7 @@
 My pipeline consisted of 5 steps and is visualized step by step with the "solidWhiteCurve.jpg" example.
 First, I read the image to obtain an input which can be seen here.
 
-[image1]
+![Screenshot]([image1])
 
 
 from the test_image folder. converted the test images to grayscale, then I .... 
