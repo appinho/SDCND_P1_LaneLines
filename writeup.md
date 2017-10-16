@@ -4,6 +4,7 @@
 
 [//]: # (Image References)
 
+[image0]: ./test_images/solidWhiteCurve.jpg "Input image"
 [image1]: ./test_images_output/gray_solidWhiteCurve.jpg "Grayscale"
 [image2]: ./test_images_output/blur_solidWhiteCurve.jpg "Blurred grayscale"
 [image3]: ./test_images_output/edge_solidWhiteCurve.jpg "Edge detection"
@@ -13,26 +14,39 @@
 
 ---
 
-### Reflection
+### 1. Pipeline
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+My pipeline consisted of 5 steps and is visualized step by step by the "solidWhiteCurve.jpg" example.
+First, the image is read to obtain an input which can be seen here.
 
-My pipeline consisted of 5 steps and is visualized step by step with the "solidWhiteCurve.jpg" example.
-First, I read the image to obtain an input which can be seen here.
+[image0]
+
+Second, the image is converted into a grayscale image.
 
 [image1]
 
+Third, the grayscale image is blurred by a gaussian filter for smoothing.
 
-from the test_image folder. converted the test images to grayscale, then I .... 
+[image2]
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+Next, the blurred image is used within an edge detection step to find all edges within the picture.
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+[image3]
 
-![alt text][image1]
+This turns out to be a binary image where the edges are shown in white and all areas without edge information in black.
+Then, a region of interest is defined and used as mask to only consider the edges from the lower triangle of the image. This step is useful to filter out all other edges that are not occuring from the street.
 
+[image4]
 
-### 2. Identify potential shortcomings with your current pipeline
+A hough transformation is applied to detect only lines from all leftover edges.
+
+[image5]
+
+Finally, all lines are separated into falling and rising lines by calculating their slopes. The end points of all rising/falling lines are store in separate arrays. Each of this arrays is used by numpy's polyfit function with degree 1 to perform a linear regression. As a result two final lines are calculated which are visualized red on the input image for comparison.
+
+[image6]
+
+### 2. Potential shortcomings
 
 
 One potential shortcoming would be what would happen when ... 
