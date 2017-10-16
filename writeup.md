@@ -16,7 +16,7 @@
 
 ### 1. Pipeline
 
-My pipeline consisted of 5 steps and is visualized step by step by the "solidWhiteCurve.jpg" example.
+My pipeline consisted of 6 steps and is visualized step by step by the "solidWhiteCurve.jpg" example.  
 First, the image is read to obtain an input which can be seen here.
 
 [image0]
@@ -48,14 +48,9 @@ Finally, all lines are separated into falling and rising lines by calculating th
 
 ### 2. Potential shortcomings
 
-
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
-
+One potential shortcoming would be what would happen when the captured image has a different alignment or zoom. Then, the region of interest would not be valid anymore and needs to be adjusted.
+Another shortcoming could occur if you consider curves. Then, the linear regression would fail because it would calculate a line for a curved lane marking. It would need a higher degree for the polynominal fit (e.g. 2).
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
+A possible improvement would be to use RANSAC for calculating the final lines to remove outlier points and get a better estimation.
