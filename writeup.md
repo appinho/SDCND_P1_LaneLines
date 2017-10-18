@@ -5,12 +5,12 @@
 [//]: # (Image References)
 
 [image0]: ./test_images/solidWhiteCurve.jpg "Input image"
-[image1]: ./test_images_output/gray_solidWhiteCurve.jpg "Grayscale"
-[image2]: ./test_images_output/blur_solidWhiteCurve.jpg "Blurred grayscale"
-[image3]: ./test_images_output/edge_solidWhiteCurve.jpg "Edge detection"
-[image4]: ./test_images_output/roi_solidWhiteCurve.jpg "Masked edge detection"
-[image5]: ./test_images_output/hough_solidWhiteCurve.jpg "Hough Lines"
-[image6]: ./test_images_output/solidWhiteCurve.jpg "Result"
+[image1]: ./report_screenshots/gray_solidWhiteCurve.jpg "Grayscale"
+[image2]: ./report_screenshots/blur_solidWhiteCurve.jpg "Blurred grayscale"
+[image3]: ./report_screenshots/edge_solidWhiteCurve.jpg "Edge detection"
+[image4]: ./report_screenshots/roi_solidWhiteCurve.jpg "Masked edge detection"
+[image5]: ./report_screenshots/hough_solidWhiteCurve.jpg "Hough Lines"
+[image6]: ./report_screenshots/solidWhiteCurve.jpg "Result"
 
 ---
 
@@ -42,13 +42,13 @@ A hough transformation is applied to detect only lines from all leftover edges.
 
 [image5]
 
-Finally, all lines are separated into falling and rising lines by calculating their slopes. The end points of all rising/falling lines are store in separate arrays. Each of this arrays is used by numpy's polyfit function with degree 1 to perform a linear regression. As a result two final lines are calculated which are visualized red on the input image for comparison.
+Finally, all lines are separated into falling and rising lines by calculating their slopes. The end points of all rising/falling lines are store in separate arrays if their slopes are within a predefined interval. Each of these arrays is then used by numpy's polyfit function with degree 1 to perform a linear regression. As a result two final lines are calculated which are visualized red and green on the input image to see the matching with the motorway lanes.
 
 [image6]
 
 ### 2. Potential shortcomings
 
-One potential shortcoming would be what would happen when the captured image has a different alignment or zoom. Then, the region of interest would not be valid anymore and needs to be adjusted.
+One potential shortcoming would be what would happen when the captured image has a different alignment or zoom. Then, the region of interest and the interval for slopes could not be valid anymore and needed further adjustment.
 Another shortcoming could occur if you consider curves. Then, the linear regression would fail because it would calculate a line for a curved lane marking. It would need a higher degree for the polynominal fit (e.g. 2).
 
 ### 3. Suggest possible improvements to your pipeline
