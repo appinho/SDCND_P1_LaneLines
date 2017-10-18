@@ -10,7 +10,7 @@
 [image3]: ./report_screenshots/edge_solidWhiteCurve.jpg "Edge detection"
 [image4]: ./report_screenshots/roi_solidWhiteCurve.jpg "Masked edge detection"
 [image5]: ./report_screenshots/hough_solidWhiteCurve.jpg "Hough Lines"
-[image6]: ./report_screenshots/solidWhiteCurve.jpg "Result"
+[image6]: ./test_images_output/solidWhiteCurve.jpg "Result"
 
 ---
 
