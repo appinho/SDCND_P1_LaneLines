@@ -38,7 +38,7 @@ Then, a region of interest is defined and used as mask to only consider the edge
 
 [image4]
 
-A hough transformation is applied to detect only lines from all leftover edges.
+A hough transformation is applied to detect only lines from all leftover edges (blue).
 
 [image5]
 
