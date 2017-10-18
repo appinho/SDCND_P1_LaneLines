@@ -42,7 +42,7 @@ A hough transformation is applied to detect only lines from all leftover edges.
 
 [image5]
 
-Finally, all lines are separated into falling and rising lines by calculating their slopes. The end points of all rising/falling lines are store in separate arrays if their slopes are within a predefined interval. Each of these arrays is then used by numpy's polyfit function with degree 1 to perform a linear regression. As a result two final lines are calculated which are visualized red and green on the input image to see the matching with the motorway lanes.
+Finally, all lines are separated into falling and rising lines by calculating their slopes. The end points of all rising/falling lines are store in separate arrays if their slopes are within a predefined interval. Each of these arrays is then used by numpy's polyfit function with degree 1 to perform a linear regression. As a result two final lines are calculated which are visualized red (left/rising) and green (right/falling) on the input image to see the matching with the motorway lanes.
 
 [image6]
 
